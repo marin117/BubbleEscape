@@ -27,11 +27,9 @@ fill_to = Vector2(0.512821, 0.817664)
 [node name="Fire" type="Node2D"]
 
 [node name="FireParticles" type="GPUParticles2D" parent="."]
-position = Vector2(145, 195)
 process_material = SubResource("ParticleProcessMaterial_ayp0j")
 
 [node name="FireLight" type="PointLight2D" parent="."]
-position = Vector2(144, 172)
 scale = Vector2(0.28, 1)
 color = Color(1, 0.470588, 0.258824, 1)
 texture = SubResource("GradientTexture2D_agip5")
