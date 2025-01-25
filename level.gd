@@ -4,6 +4,7 @@ class_name Level
 const Types = preload( "res://Types.gd")
 
 @export var bubble_scene: PackedScene
+@export var bat_scene: PackedScene
 
 @export var next_level: String
 # Called when the node enters the scene tree for the first time.
@@ -12,8 +13,6 @@ var _player_action_hold: bool = false
 var bubbles: Array = []
 
 var max_bubbles: int = 4
-
-signal finish_level
 
 func _spawn_bubble():
 	#if $Player.state == Types.PlayerStates.JUMPING:

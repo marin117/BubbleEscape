@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://yjbwuqjtaysl"]
+[gd_scene load_steps=6 format=3 uid="uid://yjbwuqjtaysl"]
 
 [ext_resource type="Texture2D" uid="uid://cpdjkvge6500g" path="res://assets/envirnoment/picture_sphere.png" id="1_65vil"]
 [ext_resource type="Script" path="res://image.gd" id="1_arc00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alg4g"]
 size = Vector2(97, 61)
+
+[sub_resource type="Gradient" id="Gradient_dcd72"]
+offsets = PackedFloat32Array(0.405229, 0.982571, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.980392, 0.980392, 0.980392, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nrtjb"]
+gradient = SubResource("Gradient_dcd72")
+fill_from = Vector2(0.470085, 0.666667)
+fill_to = Vector2(0.470085, 0)
 
 [node name="Image" type="Area2D"]
 script = ExtResource("1_arc00")
@@ -24,6 +33,11 @@ offset_right = 111.0
 offset_bottom = -17.0
 text = "Ti si jedno obicno smece"
 scroll_active = false
+
+[node name="ImageLight" type="PointLight2D" parent="."]
+position = Vector2(0, 9)
+scale = Vector2(0.970368, 0.784367)
+texture = SubResource("GradientTexture2D_nrtjb")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

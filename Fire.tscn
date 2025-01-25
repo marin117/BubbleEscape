@@ -17,10 +17,10 @@ scale_max = 7.51
 color = Color(0.741859, 0.391635, 0.0655831, 0.721569)
 color_ramp = SubResource("GradientTexture1D_2ddfw")
 
-[sub_resource type="Gradient" id="Gradient_mm66i"]
+[sub_resource type="Gradient" id="Gradient_pqmnu"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_agip5"]
-gradient = SubResource("Gradient_mm66i")
+gradient = SubResource("Gradient_pqmnu")
 fill_from = Vector2(0.34188, 0.0997151)
 fill_to = Vector2(0.512821, 0.817664)
 

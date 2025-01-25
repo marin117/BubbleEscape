@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://x57mm8yi2kmf"]
+
+[ext_resource type="Texture2D" uid="uid://7p4gkxtucqd3" path="res://assets/mobs/bat1.png" id="1_o8mku"]
+[ext_resource type="Texture2D" uid="uid://cu2dxf0tbswh6" path="res://assets/mobs/bat2.png" id="2_yru5y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p2yhb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o8mku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_yru5y")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[node name="BatSprite" type="AnimatedSprite2D"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_p2yhb")
+animation = &"fly"
+autoplay = "fly"
