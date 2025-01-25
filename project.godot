@@ -20,8 +20,8 @@ Types="*res://Types.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=800
+window/size/viewport_height=600
 
 [input]
 

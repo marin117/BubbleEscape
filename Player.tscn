@@ -13,6 +13,21 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcfxr"]
 height = 50.0
 
+[sub_resource type="Animation" id="Animation_xr4jb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_g2efl")]
+}
+
 [sub_resource type="Animation" id="Animation_47ghb"]
 resource_name = "idle"
 length = 0.6
@@ -30,8 +45,9 @@ tracks/0/keys = {
 "values": [ExtResource("2_g2efl"), ExtResource("4_j4wy7")]
 }
 
-[sub_resource type="Animation" id="Animation_xr4jb"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_2au6p"]
+resource_name = "jumping"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -39,10 +55,10 @@ tracks/0/path = NodePath("Body:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.0666667),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_g2efl")]
+"values": [ExtResource("7_nde8f")]
 }
 
 [sub_resource type="Animation" id="Animation_0gubi"]
@@ -60,22 +76,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("5_ud7l4"), ExtResource("6_avrxy")]
-}
-
-[sub_resource type="Animation" id="Animation_2au6p"]
-resource_name = "jumping"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("7_nde8f")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aw0jq"]
@@ -122,8 +122,6 @@ shape = SubResource("CapsuleShape2D_tcfxr")
 libraries = {
 "": SubResource("AnimationLibrary_aw0jq")
 }
-
-[node name="Camera" type="Camera2D" parent="."]
 
 [node name="Weapon" type="Sprite2D" parent="."]
 position = Vector2(1, 10)

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://btdr3uhqd8cdu"]
+
+[ext_resource type="Texture2D" uid="uid://d0p41cn0iahi1" path="res://assets/envirnoment/window_1.png" id="1_u0j4s"]
+[ext_resource type="Texture2D" uid="uid://ctsi885vr4r51" path="res://assets/envirnoment/window_2.png" id="2_mxl5c"]
+
+[sub_resource type="Animation" id="Animation_f7422"]
+resource_name = "creep"
+length = 2.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_u0j4s"), ExtResource("2_mxl5c")]
+}
+
+[sub_resource type="Animation" id="Animation_f1yf6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_u0j4s")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7redo"]
+_data = {
+"RESET": SubResource("Animation_f1yf6"),
+"creep": SubResource("Animation_f7422")
+}
+
+[node name="Creeper" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u0j4s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7redo")
+}
+autoplay = "creep"
