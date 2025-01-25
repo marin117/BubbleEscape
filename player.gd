@@ -10,6 +10,7 @@ signal player_jump
 const Types = preload( "res://Types.gd")
 const Bubble = preload( "res://bubble.gd")
 
+var sliding: bool = false
 
 @export var state : Types.PlayerStates = Types.PlayerStates.IDLE
 @export var weapon_marker_position: Vector2 = Vector2(0,0)
@@ -43,6 +44,8 @@ func _physics_process(delta: float) -> void:
 			state = Types.PlayerStates.WALKING
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if sliding:
+		velocity *= 1.2
 	var mouse_pos: Vector2 = get_global_mouse_position()
 
 	var angle_to_mouse: float = rad_to_deg((mouse_pos - $Weapon.global_position).normalized().angle())
@@ -66,3 +69,6 @@ func _change_animation() -> void:
 		$AnimationPlayer.play("walking")
 		return
 	$AnimationPlayer.play("idle")
+
+func set_sliding(value: bool) -> void:
+	sliding = value

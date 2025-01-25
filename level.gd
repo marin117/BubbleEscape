@@ -55,3 +55,13 @@ func _on_bubble_collided(bubble: Node2D) -> void:
 
 func _on_door_opened() -> void:
 	get_tree().change_scene_to_file(next_level)
+
+
+func _on_soap_area_body_entered(body: Node2D) -> void:
+	if body.is_in_group("players"):
+		body.set_sliding(true)
+
+
+func _on_soap_area_body_exited(body: Node2D) -> void:
+	if body.is_in_group("players"):
+		body.set_sliding(false)
