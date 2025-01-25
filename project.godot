@@ -13,7 +13,6 @@ config_version=5
 config/name="BubbleEscape"
 run/main_scene="res://World.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://assets/test_assets/icon.svg"
 
 [autoload]
 

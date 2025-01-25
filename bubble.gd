@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const FALL_VELOCITY: float = 0.1
+const FALL_VELOCITY: float = 0.05
 const BOUNCE_STRENGTH = 0.5
 
 signal bubble_collided(body: Node2D)

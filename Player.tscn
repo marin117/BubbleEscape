@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwycr7lehl7fi"]
+[gd_scene load_steps=22 format=3 uid="uid://dwycr7lehl7fi"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_xeulp"]
 [ext_resource type="Texture2D" uid="uid://b7cc1cs1oqpv6" path="res://assets/player/PC1.png" id="2_yqvq8"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dvqakvx6lpa7u" path="res://assets/player/staff_run/run1.png" id="9_ri1m4"]
 [ext_resource type="Texture2D" uid="uid://tusccxflvlwv" path="res://assets/player/staff_run/run2.png" id="10_3xmq6"]
 [ext_resource type="Texture2D" uid="uid://ckgfpl6fij83a" path="res://assets/player/staff_jump/jump.png" id="11_jdoah"]
+[ext_resource type="Texture2D" uid="uid://bcybtucbmr872" path="res://assets/weapons/staff.png" id="12_8bsy0"]
+[ext_resource type="Texture2D" uid="uid://dn7hp4q073c0d" path="res://assets/bubble.png" id="13_w7cda"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcfxr"]
 height = 50.0
@@ -47,6 +49,22 @@ tracks/0/keys = {
 "values": [ExtResource("2_yqvq8"), ExtResource("3_r3klr"), ExtResource("4_1ayov"), ExtResource("5_iaksi"), ExtResource("6_xw7r0"), ExtResource("7_y43bi"), ExtResource("8_task5")]
 }
 
+[sub_resource type="Animation" id="Animation_2au6p"]
+resource_name = "jumping"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_jdoah")]
+}
+
 [sub_resource type="Animation" id="Animation_0gubi"]
 resource_name = "walking"
 length = 0.2
@@ -64,22 +82,6 @@ tracks/0/keys = {
 "values": [ExtResource("9_ri1m4"), ExtResource("10_3xmq6")]
 }
 
-[sub_resource type="Animation" id="Animation_2au6p"]
-resource_name = "jumping"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("11_jdoah")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aw0jq"]
 _data = {
 "RESET": SubResource("Animation_xr4jb"),
@@ -87,6 +89,20 @@ _data = {
 "jumping": SubResource("Animation_2au6p"),
 "walking": SubResource("Animation_0gubi")
 }
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bfadv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ivbfk"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 20.0
+initial_velocity_max = 10.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 4.99998
+gravity = Vector3(0, 0, 0)
+scale_min = 0.15
+scale_max = 0.2
 
 [node name="PlayerBody" type="CharacterBody2D" groups=["players"]]
 position = Vector2(0, -9)
@@ -107,3 +123,21 @@ libraries = {
 }
 
 [node name="Camera" type="Camera2D" parent="."]
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(1, 10)
+rotation = -0.119215
+scale = Vector2(4.20109, 1.75952)
+texture = ExtResource("12_8bsy0")
+
+[node name="Particles" type="GPUParticles2D" parent="Weapon"]
+material = SubResource("CanvasItemMaterial_bfadv")
+position = Vector2(13.9628, -1.15829)
+scale = Vector2(1, 1)
+amount = 10
+amount_ratio = 0.7
+process_material = SubResource("ParticleProcessMaterial_ivbfk")
+texture = ExtResource("13_w7cda")
+
+[node name="WeaponMarker" type="Marker2D" parent="Weapon"]
+position = Vector2(14.1991, -1.09069)

@@ -11,13 +11,13 @@ var bubbles: Array = []
 var max_bubbles: int = 4
 
 func _spawn_bubble():
-	if $Player.state == Types.PlayerStates.JUMPING:
-		return
+	#if $Player.state == Types.PlayerStates.JUMPING:
+	#	return
 	if bubbles.size() == max_bubbles:
 		bubbles[0].queue_free()
 		bubbles.remove_at(0)
 	var bubble = bubble_scene.instantiate()
-	bubble.position = $Player.position + Vector2(50 * $Player.flipped, -10)
+	bubble.position = $Player.weapon_marker_position
 	bubbles.append(bubble)
 	bubble.enlarge()
 	bubble.bubble_collided.connect(_on_bubble_collided)
