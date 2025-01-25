@@ -1,4 +1,6 @@
 extends Node2D
+const Types = preload( "res://Types.gd")
+
 @export var bubble_scene: PackedScene
 # Called when the node enters the scene tree for the first time.
 
@@ -9,6 +11,8 @@ var bubbles: Array = []
 var max_bubbles: int = 4
 
 func _spawn_bubble():
+	if $Player.state == Types.PlayerStates.JUMPING:
+		return
 	if bubbles.size() == max_bubbles:
 		bubbles[0].queue_free()
 		bubbles.remove_at(0)
@@ -17,7 +21,7 @@ func _spawn_bubble():
 	bubbles.append(bubble)
 	bubble.enlarge()
 	bubble.bubble_collided.connect(_on_bubble_collided)
-	add_child(bubble)
+	$Bubbles.add_child(bubble)
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -33,7 +37,8 @@ func _on_player_action_pressed() -> void:
 
 func _on_player_action_released() -> void:
 	_player_action_hold = false
-	bubbles[-1].stop_enlarging()
+	if not bubbles.is_empty():
+		bubbles[-1].stop_enlarging()
 
 func _on_bubble_collided(bubble: Node2D) -> void:
 	var to_remove: Array[int] = []

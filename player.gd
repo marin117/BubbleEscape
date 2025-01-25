@@ -7,9 +7,11 @@ signal action_pressed
 signal action_released
 signal player_jump
 
-enum States {IDLE, JUMPING, WALKING}
+const Types = preload( "res://Types.gd")
+const Bubble = preload( "res://bubble.gd")
 
-@export var state: States = States.IDLE
+
+@export var state : Types.PlayerStates = Types.PlayerStates.IDLE
 @export var flipped: int = 1
 
 func _apply_forces(delta: float) -> void:
@@ -20,19 +22,22 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	_apply_forces(delta)
 
+	if is_on_floor():
+		state = Types.PlayerStates.IDLE
+	else:
+		state = Types.PlayerStates.JUMPING
+
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		state = States.JUMPING
 		player_jump.emit()
 	
 	if Input.is_action_just_pressed("action"):
 		action_pressed.emit()
 	if Input.is_action_just_released("action"):
 		action_released.emit()
-	
+
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		state = States.WALKING
 		velocity.x = direction * SPEED
 		if direction == -1:
 			$Sprite2D.flip_h = true
@@ -40,17 +45,18 @@ func _physics_process(delta: float) -> void:
 		else:
 			$Sprite2D.flip_h = false
 			flipped = 1
+		if is_on_floor():
+			state = Types.PlayerStates.WALKING
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		state = States.IDLE
 	_change_animation()
 	move_and_slide()
 
 func _change_animation() -> void:
-	if state == States.JUMPING or not is_on_floor():
+	if state == Types.PlayerStates.JUMPING:
 		$AnimationPlayer.play("jumping")
 		return
-	if is_on_floor() and state == States.WALKING:
+	if is_on_floor() and state == Types.PlayerStates.WALKING:
 		$AnimationPlayer.play("walking")
 		return
 	$AnimationPlayer.play("idle")
