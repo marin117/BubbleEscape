@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1ftkcpgq3x8i"]
+[gd_scene load_steps=4 format=3 uid="uid://yjbwuqjtaysl"]
 
-[ext_resource type="Texture2D" uid="uid://dwu7arnotxwow" path="res://assets/envirnoment/picture_sphere.png" id="1_65vil"]
+[ext_resource type="Texture2D" uid="uid://cpdjkvge6500g" path="res://assets/envirnoment/picture_sphere.png" id="1_65vil"]
 [ext_resource type="Script" path="res://image.gd" id="1_arc00"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_alg4g"]
