@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c2cslev4un0c7"]
+[gd_scene load_steps=22 format=4 uid="uid://c2cslev4un0c7"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_wlgsp"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://Bubble.tscn" id="2_jwjfd"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bttw3w6643hu0" path="res://assets/tiles/platform.png" id="9_xosb4"]
 [ext_resource type="Texture2D" uid="uid://bo46rhtbpx722" path="res://assets/tiles/wall_tile.png" id="10_8p64r"]
 [ext_resource type="Texture2D" uid="uid://jtfvmh8fci8q" path="res://assets/envirnoment/sconce.png" id="11_i225p"]
+[ext_resource type="PackedScene" uid="uid://bt6k4w8em0cg5" path="res://Fire.tscn" id="12_ooloj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhoha"]
 texture = ExtResource("7_oegq0")
@@ -67,23 +68,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_dpxjl")
 
-[sub_resource type="Gradient" id="Gradient_f3bbx"]
-offsets = PackedFloat32Array(0, 0.474903)
-colors = PackedColorArray(0.86, 0, 0, 1, 0.847412, 0.67204, 0.167673, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_2ddfw"]
-gradient = SubResource("Gradient_f3bbx")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ayp0j"]
-particle_flag_disable_z = true
-direction = Vector3(0, -1, 0)
-initial_velocity_max = 50.0
-gravity = Vector3(0, 0, 0)
-scale_min = 5.0
-scale_max = 7.51
-color = Color(0.741859, 0.391635, 0.0655831, 0.721569)
-color_ramp = SubResource("GradientTexture1D_2ddfw")
-
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_wlgsp")
 bubble_scene = ExtResource("2_jwjfd")
@@ -124,13 +108,10 @@ z_index = -25
 tile_map_data = PackedByteArray("AAAEAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ovc38")
 
-[node name="FireParticles2" type="GPUParticles2D" parent="."]
-position = Vector2(463, 190)
-process_material = SubResource("ParticleProcessMaterial_ayp0j")
+[node name="Fire2" parent="." instance=ExtResource("12_ooloj")]
+position = Vector2(321, 5)
 
-[node name="FireParticles" type="GPUParticles2D" parent="."]
-position = Vector2(145, 195)
-process_material = SubResource("ParticleProcessMaterial_ayp0j")
+[node name="Fire" parent="." instance=ExtResource("12_ooloj")]
 
 [connection signal="door_opened" from="Door" to="." method="_on_door_opened"]
 [connection signal="action_pressed" from="Player" to="." method="_on_player_action_pressed"]
