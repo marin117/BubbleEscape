@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://by6shmnqpsrfb"]
+
+[ext_resource type="Script" path="res://bubble.gd" id="1_4eu71"]
+[ext_resource type="Texture2D" uid="uid://dn7hp4q073c0d" path="res://assets/bubble.png" id="2_rtqut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhdft"]
+size = Vector2(90.0001, 90.0001)
+
+[sub_resource type="Animation" id="Animation_qsn6v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_u5fq7"]
+resource_name = "spawn"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_806ex"]
+_data = {
+"RESET": SubResource("Animation_qsn6v"),
+"spawn": SubResource("Animation_u5fq7")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm5ny"]
+size = Vector2(45, 35)
+
+[node name="Bubble" type="CharacterBody2D" groups=["bubbles"]]
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 2147483648
+script = ExtResource("1_4eu71")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.626, 4)
+texture = ExtResource("2_rtqut")
+
+[node name="TopBubbleCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(-3.38813e-21, 0)
+scale = Vector2(0.999998, 0.999998)
+shape = SubResource("RectangleShape2D_qhdft")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_806ex")
+}
+
+[node name="BubbleArea" type="Area2D" parent="." groups=["bubbles"]]
+collision_layer = 256
+collision_mask = 3
+
+[node name="AreaCollisionShape" type="CollisionShape2D" parent="BubbleArea"]
+position = Vector2(-1.43051e-06, -1.90735e-06)
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_fm5ny")
+
+[connection signal="body_entered" from="BubbleArea" to="." method="_on_bubble_area_body_entered"]
