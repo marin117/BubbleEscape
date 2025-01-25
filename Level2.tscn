@@ -52,7 +52,7 @@ scale = Vector2(2, 2)
 hint = "Ti si smece"
 
 [node name="Creeper" parent="." instance=ExtResource("9_317g1")]
-position = Vector2(371, 177)
+position = Vector2(313, 149)
 scale = Vector2(1.5, 1.5)
 
 [node name="Door" parent="." instance=ExtResource("3_nvfvn")]

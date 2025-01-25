@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpdjkvge6500g"
-path="res://.godot/imported/picture_sphere.png-582ce8c0636ecbad03d4713cb3379d9c.ctex"
+uid="uid://dat743vwvheci"
+path="res://.godot/imported/creep_enter1.png-2c3ce467dfc6b8e9bd9c54bf1fbf46b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/envirnoment/picture_sphere.png"
-dest_files=["res://.godot/imported/picture_sphere.png-582ce8c0636ecbad03d4713cb3379d9c.ctex"]
+source_file="res://assets/envirnoment/window/creep_enter1.png"
+dest_files=["res://.godot/imported/creep_enter1.png-2c3ce467dfc6b8e9bd9c54bf1fbf46b0.ctex"]
 
 [params]
 
