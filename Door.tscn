@@ -65,6 +65,8 @@ libraries = {
 }
 
 [node name="OpenDoorTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="OpenDoorTimer" to="." method="_on_open_door_timer_timeout"]
