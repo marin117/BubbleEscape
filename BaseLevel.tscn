@@ -79,32 +79,32 @@ sources/5 = SubResource("TileSetAtlasSource_1ihia")
 sources/6 = SubResource("TileSetAtlasSource_jeth1")
 sources/7 = SubResource("TileSetAtlasSource_qr5ob")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ly6e"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0yj55"]
 texture = ExtResource("8_aijkk")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d6to8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y431n"]
 texture = ExtResource("10_8p64r")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wykxp"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_km5y3"]
 texture = ExtResource("13_1jkm5")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d5jj6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gdhar"]
 texture = ExtResource("14_3vglt")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_bjiel"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_3ly6e")
-sources/1 = SubResource("TileSetAtlasSource_d6to8")
-sources/2 = SubResource("TileSetAtlasSource_wykxp")
-sources/3 = SubResource("TileSetAtlasSource_d5jj6")
+sources/0 = SubResource("TileSetAtlasSource_0yj55")
+sources/1 = SubResource("TileSetAtlasSource_y431n")
+sources/2 = SubResource("TileSetAtlasSource_km5y3")
+sources/3 = SubResource("TileSetAtlasSource_gdhar")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dpxjl"]
 texture = ExtResource("11_i225p")

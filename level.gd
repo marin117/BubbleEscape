@@ -17,8 +17,11 @@ func _ready() -> void:
 	if get_node_or_null("Creeper"):
 		creeper_debuff = true
 
-func _spawn_bubble():
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("main_menu"):
+		get_tree().change_scene_to_file("res://Menu.tscn")
 
+func _spawn_bubble():
 	if bubbles.size() == max_bubbles:
 		_burst_bubble_at(0)
 	var bubble = bubble_scene.instantiate()

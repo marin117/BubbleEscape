@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dmctdcefrndrw" path="res://assets/player/run2.png" id="6_avrxy"]
 [ext_resource type="Texture2D" uid="uid://l3qoxwif36v3" path="res://assets/player/jump.png" id="7_nde8f"]
 [ext_resource type="Texture2D" uid="uid://bcybtucbmr872" path="res://assets/weapons/staff.png" id="12_8bsy0"]
-[ext_resource type="Texture2D" uid="uid://dn7hp4q073c0d" path="res://assets/bubble.png" id="13_w7cda"]
+[ext_resource type="Texture2D" uid="uid://dn7hp4q073c0d" path="res://assets/bubble/bubble.png" id="13_w7cda"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tcfxr"]
 height = 50.0
