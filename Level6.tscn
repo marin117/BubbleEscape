@@ -119,7 +119,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_dpxjl")
 sources/1 = SubResource("TileSetAtlasSource_37psk")
 
-[node name="BaseLevel" type="Node2D"]
+[node name="Level6" type="Node2D"]
 script = ExtResource("1_esfqx")
 bubble_scene = ExtResource("2_7lotl")
 next_level = "res://Level7.tscn"
