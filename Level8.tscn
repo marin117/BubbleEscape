@@ -130,10 +130,16 @@ next_level = "res://Level9.tscn"
 position = Vector2(722, 361)
 scale = Vector2(4, 4)
 
-[node name="Bubbles" type="Node2D" parent="."]
+[node name="Creeper" parent="." instance=ExtResource("19_087x6")]
+position = Vector2(401, 248)
+scale = Vector2(1.5, 1.5)
 
-[node name="Player" parent="." instance=ExtResource("4_ns214")]
-position = Vector2(49, 416)
+[node name="Image" parent="." instance=ExtResource("20_ihaue")]
+position = Vector2(122, 356)
+scale = Vector2(2.5, 2.5)
+image_texture = "res://assets/hints/creep_hint.png"
+
+[node name="Bubbles" type="Node2D" parent="."]
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -168,12 +174,8 @@ position = Vector2(302, 275)
 [node name="Torch2" parent="." instance=ExtResource("18_84fft")]
 position = Vector2(495, 245)
 
-[node name="Creeper" parent="." instance=ExtResource("19_087x6")]
-position = Vector2(157, 207)
-
-[node name="Image" parent="." instance=ExtResource("20_ihaue")]
-position = Vector2(280, 435)
-scale = Vector2(2.5, 2.5)
+[node name="Player" parent="." instance=ExtResource("4_ns214")]
+position = Vector2(49, 416)
 
 [connection signal="door_opened" from="Door" to="." method="_on_door_opened"]
 [connection signal="action_pressed" from="Player" to="." method="_on_player_action_pressed"]

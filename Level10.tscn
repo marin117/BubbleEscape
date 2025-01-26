@@ -141,6 +141,10 @@ next_level = "res://Level6.tscn"
 position = Vector2(688, 113)
 scale = Vector2(4, 4)
 
+[node name="Creeper" parent="." instance=ExtResource("19_uwg8d")]
+position = Vector2(156, 190)
+scale = Vector2(1.5, 1.5)
+
 [node name="Bubbles" type="Node2D" parent="."]
 
 [node name="Camera" type="Camera2D" parent="."]
@@ -165,9 +169,6 @@ position = Vector2(753, 54)
 
 [node name="Fire" parent="." instance=ExtResource("17_ucibd")]
 position = Vector2(624, 52)
-
-[node name="Creeper" parent="." instance=ExtResource("19_uwg8d")]
-position = Vector2(157, 207)
 
 [node name="EnviromentalLight" type="DirectionalLight2D" parent="."]
 energy = 0.96

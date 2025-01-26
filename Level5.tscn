@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=4 uid="uid://bsvmcg7tve1ce"]
+[gd_scene load_steps=36 format=4 uid="uid://bsvmcg7tve1ce"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_55ylx"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://Bubble.tscn" id="2_najl1"]
 [ext_resource type="PackedScene" uid="uid://bplmdr4p6ufdx" path="res://Door.tscn" id="3_4fe7i"]
 [ext_resource type="PackedScene" uid="uid://dwycr7lehl7fi" path="res://Player.tscn" id="4_gqvad"]
+[ext_resource type="PackedScene" uid="uid://yjbwuqjtaysl" path="res://Image.tscn" id="4_h4xsx"]
 [ext_resource type="Texture2D" uid="uid://cvrgrvo3ksjlt" path="res://assets/tiles/floor.png" id="5_od0ut"]
 [ext_resource type="Texture2D" uid="uid://dflwiyo680syw" path="res://assets/tiles/ground.png" id="6_8bbkn"]
 [ext_resource type="Texture2D" uid="uid://bttw3w6643hu0" path="res://assets/tiles/platform.png" id="7_r6thw"]
@@ -128,10 +129,12 @@ next_level = "res://Level6.tscn"
 position = Vector2(719, 296)
 scale = Vector2(4, 4)
 
-[node name="Bubbles" type="Node2D" parent="."]
+[node name="Image" parent="." instance=ExtResource("4_h4xsx")]
+position = Vector2(151, 356)
+scale = Vector2(2.5, 2.5)
+image_texture = "res://assets/hints/float_hint.png"
 
-[node name="Player" parent="." instance=ExtResource("4_gqvad")]
-position = Vector2(49, 416)
+[node name="Bubbles" type="Node2D" parent="."]
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -168,6 +171,9 @@ position = Vector2(497, 342)
 
 [node name="StartingPosition" type="Node2D" parent="."]
 position = Vector2(48, 421)
+
+[node name="Player" parent="." instance=ExtResource("4_gqvad")]
+position = Vector2(49, 416)
 
 [connection signal="door_opened" from="Door" to="." method="_on_door_opened"]
 [connection signal="action_pressed" from="Player" to="." method="_on_player_action_pressed"]

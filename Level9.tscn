@@ -129,10 +129,9 @@ next_level = "res://Level10.tscn"
 position = Vector2(722, 361)
 scale = Vector2(4, 4)
 
-[node name="Bubbles" type="Node2D" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("4_e7jxc")]
-position = Vector2(49, 416)
+[node name="Creeper" parent="." instance=ExtResource("19_xvye0")]
+position = Vector2(393, 207)
+scale = Vector2(1.5, 1.5)
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -167,8 +166,10 @@ position = Vector2(302, 275)
 [node name="Torch2" parent="." instance=ExtResource("18_vviqg")]
 position = Vector2(495, 245)
 
-[node name="Creeper" parent="." instance=ExtResource("19_xvye0")]
-position = Vector2(157, 207)
+[node name="Bubbles" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("4_e7jxc")]
+position = Vector2(49, 416)
 
 [node name="StartingPosition" type="Node2D" parent="."]
 position = Vector2(48, 421)

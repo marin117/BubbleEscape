@@ -130,9 +130,6 @@ scale = Vector2(4, 4)
 
 [node name="Bubbles" type="Node2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource("6_tpl80")]
-position = Vector2(49, 416)
-
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
@@ -165,6 +162,9 @@ position = Vector2(401, 190)
 
 [node name="Torch2" parent="." instance=ExtResource("18_xcnph")]
 position = Vector2(303, 345)
+
+[node name="Player" parent="." instance=ExtResource("6_tpl80")]
+position = Vector2(49, 416)
 
 [connection signal="door_opened" from="Door" to="." method="_on_door_opened"]
 [connection signal="action_pressed" from="Player" to="." method="_on_player_action_pressed"]
