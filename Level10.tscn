@@ -135,7 +135,7 @@ fill_to = Vector2(0.8, 0.8)
 [node name="Level10" type="Node2D"]
 script = ExtResource("1_ut20y")
 bubble_scene = ExtResource("2_55fxu")
-next_level = "res://Level6.tscn"
+next_level = "res://LevelWin.tscn"
 
 [node name="Door" parent="." instance=ExtResource("3_ud5wy")]
 position = Vector2(688, 113)
