@@ -12,7 +12,7 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_open_door_timer_timeout() -> void:
 	$OpenDoorTimer.start(1)
 	time_passed += 1
-	if time_passed == 3:
+	if time_passed == 2:
 		door_opened.emit()
 
 
