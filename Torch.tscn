@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bumdgibs4pj3k"]
+
+[ext_resource type="Texture2D" uid="uid://drrnxicdn3a8" path="res://assets/envirnoment/torch.png" id="1_2mpea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epjas"]
+size = Vector2(7, 25)
+
+[sub_resource type="Gradient" id="Gradient_xdgej"]
+offsets = PackedFloat32Array(0, 0.474903)
+colors = PackedColorArray(0.86, 0, 0, 1, 0.847412, 0.67204, 0.167673, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2ddfw"]
+gradient = SubResource("Gradient_xdgej")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bp8o5"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 7.51
+color = Color(0.741859, 0.391635, 0.0655831, 0.721569)
+color_ramp = SubResource("GradientTexture1D_2ddfw")
+
+[sub_resource type="Gradient" id="Gradient_jvcle"]
+offsets = PackedFloat32Array(0, 0.991285)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ohgf5"]
+gradient = SubResource("Gradient_jvcle")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.478632, 0.534188)
+fill_to = Vector2(0.82906, 0.179487)
+
+[node name="Torch" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2mpea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_epjas")
+
+[node name="FireParticles" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_bp8o5")
+
+[node name="TorchLight" type="PointLight2D" parent="."]
+position = Vector2(-0.443009, 0.896517)
+rotation = 3.14159
+scale = Vector2(0.82577, -0.909891)
+color = Color(1, 0.470588, 0.258824, 1)
+energy = 4.0
+texture = SubResource("GradientTexture2D_ohgf5")

@@ -4,7 +4,6 @@ class_name Level
 const Types = preload( "res://Types.gd")
 
 @export var bubble_scene: PackedScene
-
 @export var next_level: String
 # Called when the node enters the scene tree for the first time.
 var _player_action_hold: bool = false
@@ -14,8 +13,7 @@ var bubbles: Array = []
 var max_bubbles: int = 4
 
 func _spawn_bubble():
-	#if $Player.state == Types.PlayerStates.JUMPING:
-	#	return
+
 	if bubbles.size() == max_bubbles:
 		bubbles[0].queue_free()
 		bubbles.remove_at(0)
@@ -24,14 +22,8 @@ func _spawn_bubble():
 	bubbles.append(bubble)
 	bubble.enlarge()
 	bubble.bubble_collided.connect(_on_bubble_collided)
+	bubble.bubble_burst.connect(_on_bubble_burst)
 	$Bubbles.add_child(bubble)
-
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_player_action_pressed() -> void:
 	if not _player_action_hold:
@@ -51,6 +43,10 @@ func _on_bubble_collided(bubble: Node2D) -> void:
 	for index in to_remove:
 		bubbles[index].queue_free()
 		bubbles.remove_at(index)
+
+func _on_bubble_burst() -> void:
+	bubbles[-1].queue_free()
+	bubbles.resize(bubbles.size() - 1)
 
 func _on_door_opened() -> void:
 	get_tree().change_scene_to_file(next_level)
