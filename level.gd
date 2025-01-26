@@ -9,8 +9,13 @@ const Types = preload( "res://Types.gd")
 var _player_action_hold: bool = false
 
 var bubbles: Array = []
+var creeper_debuff: bool = false
 
 var max_bubbles: int = 4
+
+func _ready() -> void:
+	if get_node_or_null("Creeper"):
+		creeper_debuff = true
 
 func _spawn_bubble():
 
@@ -20,6 +25,8 @@ func _spawn_bubble():
 	var bubble = bubble_scene.instantiate()
 	bubble.position = $Player.weapon_marker_position
 	bubbles.append(bubble)
+	if creeper_debuff:
+		bubble.bubble_burst_limit = 0.3
 	bubble.enlarge()
 	bubble.bubble_collided.connect(_on_bubble_collided)
 	bubble.bubble_burst.connect(_on_bubble_burst)
@@ -60,3 +67,7 @@ func _on_soap_area_body_entered(body: Node2D) -> void:
 func _on_soap_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("players"):
 		body.set_sliding(false)
+
+
+func _on_player_player_dropped() -> void:
+	$Player.global_position = $StartingPosition.global_position

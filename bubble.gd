@@ -3,7 +3,7 @@ extends CharacterBody2D
 const FALL_VELOCITY: float = 0.05
 const BOUNCE_STRENGTH: float = 0.5
 
-var bubble_burst_limit: float = 0.95
+@export var bubble_burst_limit: float = 0.95
 var bursting: bool = false
 
 signal bubble_collided(body: Node2D)

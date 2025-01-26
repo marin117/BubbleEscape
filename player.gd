@@ -6,6 +6,7 @@ const JUMP_VELOCITY: float = -400.0
 signal action_pressed
 signal action_released
 signal player_jump
+signal player_dropped
 
 const Types = preload( "res://Types.gd")
 const Bubble = preload( "res://bubble.gd")
@@ -83,3 +84,7 @@ func set_sliding(value: bool) -> void:
 
 func disable_input() -> void:
 	input_disabled = false
+
+
+func _on_screen_notifier_screen_exited() -> void:
+	player_dropped.emit()

@@ -139,3 +139,7 @@ texture = ExtResource("13_w7cda")
 
 [node name="WeaponMarker" type="Marker2D" parent="Weapon"]
 position = Vector2(14.1991, -1.09069)
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="ScreenNotifier" to="." method="_on_screen_notifier_screen_exited"]

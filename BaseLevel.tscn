@@ -165,9 +165,10 @@ tile_map_data = PackedByteArray("AAAEAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ovc38")
 
 [node name="Fire2" parent="." instance=ExtResource("12_ooloj")]
-position = Vector2(321, 5)
+position = Vector2(464, 178)
 
 [node name="Fire" parent="." instance=ExtResource("12_ooloj")]
+position = Vector2(146, 178)
 
 [node name="EnviromentalLight" type="DirectionalLight2D" parent="."]
 energy = 0.2
