@@ -11,7 +11,7 @@ var _player_action_hold: bool = false
 var bubbles: Array = []
 var creeper_debuff: bool = false
 
-var max_bubbles: int = 4
+var max_bubbles: int = 5
 
 func _ready() -> void:
 	if get_node_or_null("Creeper"):
