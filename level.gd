@@ -79,3 +79,7 @@ func _on_soap_area_body_exited(body: Node2D) -> void:
 
 func _on_player_player_dropped() -> void:
 	$Player.global_position = $StartingPosition.global_position
+
+
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://Menu.tscn")
