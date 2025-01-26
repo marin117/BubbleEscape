@@ -139,8 +139,6 @@ position = Vector2(122, 356)
 scale = Vector2(2.5, 2.5)
 image_texture = "res://assets/hints/creep_hint.png"
 
-[node name="Bubbles" type="Node2D" parent="."]
-
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
@@ -173,6 +171,8 @@ position = Vector2(302, 275)
 
 [node name="Torch2" parent="." instance=ExtResource("18_84fft")]
 position = Vector2(495, 245)
+
+[node name="Bubbles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_ns214")]
 position = Vector2(49, 416)

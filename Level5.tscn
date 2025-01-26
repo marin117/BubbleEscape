@@ -134,8 +134,6 @@ position = Vector2(151, 356)
 scale = Vector2(2.5, 2.5)
 image_texture = "res://assets/hints/float_hint.png"
 
-[node name="Bubbles" type="Node2D" parent="."]
-
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
@@ -171,6 +169,8 @@ position = Vector2(497, 342)
 
 [node name="StartingPosition" type="Node2D" parent="."]
 position = Vector2(48, 421)
+
+[node name="Bubbles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_gqvad")]
 position = Vector2(49, 416)

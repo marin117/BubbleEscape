@@ -145,8 +145,6 @@ scale = Vector2(4, 4)
 position = Vector2(156, 190)
 scale = Vector2(1.5, 1.5)
 
-[node name="Bubbles" type="Node2D" parent="."]
-
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
 
@@ -186,6 +184,8 @@ rotation = -1.02551
 
 [node name="Torch4" parent="." instance=ExtResource("18_c0di5")]
 position = Vector2(403, 254)
+
+[node name="Bubbles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_ysqao")]
 position = Vector2(49, 416)
