@@ -11,7 +11,7 @@ var _player_action_hold: bool = false
 var bubbles: Array = []
 var creeper_debuff: bool = false
 
-var max_bubbles: int = 5
+var max_bubbles: int = 4
 
 func _ready() -> void:
 	if get_node_or_null("Creeper"):
@@ -20,8 +20,7 @@ func _ready() -> void:
 func _spawn_bubble():
 
 	if bubbles.size() == max_bubbles:
-		bubbles[0].queue_free()
-		bubbles.remove_at(0)
+		_burst_bubble_at(0)
 	var bubble = bubble_scene.instantiate()
 	bubble.position = $Player.weapon_marker_position
 	bubbles.append(bubble)
@@ -48,12 +47,21 @@ func _on_bubble_collided(bubble: Node2D) -> void:
 		if bubbles[index] == bubble  && bubble != bubbles[-1]:
 			to_remove.append(index)
 	for index in to_remove:
-		bubbles[index].queue_free()
-		bubbles.remove_at(index)
+		_burst_bubble_at(index)
 
 func _on_bubble_burst() -> void:
-	bubbles[-1].queue_free()
-	bubbles.resize(bubbles.size() - 1)
+	_burst_bubble_at(-1)
+
+func _burst_bubble_at(index: int) -> void:
+	if index > bubbles.size():
+		return
+	index = max(-1, index)
+	AudioManager.play_pop()
+	bubbles[index].queue_free()
+	if index < 0:
+		bubbles.resize(bubbles.size() - 1)
+	else:
+		bubbles.remove_at(index)
 
 func _on_door_opened() -> void:
 	get_tree().change_scene_to_file(next_level)

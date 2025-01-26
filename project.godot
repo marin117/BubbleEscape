@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3", "GL Compatibility")
 [autoload]
 
 Types="*res://Types.gd"
+AudioManager="*res://AudioManager.tscn"
 
 [display]
 
