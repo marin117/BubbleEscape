@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=4 uid="uid://bycgvtfg03wvf"]
 
 [ext_resource type="Script" path="res://options_menu.gd" id="1_tr0fu"]
-[ext_resource type="Script" path="res://audio_options.gd" id="2_lp50c"]
+[ext_resource type="Script" path="res://audio_options_sliders.gd" id="3_ecffw"]
 [ext_resource type="Theme" uid="uid://dw5nvkayatv5e" path="res://ButtonTheme.tres" id="3_wgov3"]
 [ext_resource type="Texture2D" uid="uid://dflwiyo680syw" path="res://assets/tiles/ground.png" id="4_8xavc"]
 [ext_resource type="Texture2D" uid="uid://jtfvmh8fci8q" path="res://assets/envirnoment/sconce.png" id="9_wok5q"]
@@ -61,7 +61,6 @@ anchors_preset = 0
 offset_top = -1.0
 offset_right = 40.0
 offset_bottom = 39.0
-script = ExtResource("2_lp50c")
 
 [node name="MarginContainer" type="MarginContainer" parent="AudioOptions"]
 layout_mode = 0
@@ -85,6 +84,8 @@ layout_mode = 2
 size_flags_vertical = 3
 max_value = 1.0
 step = 0.05
+script = ExtResource("3_ecffw")
+bus_index = 1
 
 [node name="SFX" type="Label" parent="AudioOptions/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -96,11 +97,12 @@ layout_mode = 2
 size_flags_vertical = 3
 max_value = 1.0
 step = 0.05
+script = ExtResource("3_ecffw")
+bus_index = 2
 
-[node name="Confirm" type="Button" parent="AudioOptions/MarginContainer/VBoxContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="AudioOptions/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
-theme = ExtResource("3_wgov3")
-text = "Confirm"
 
 [node name="Back" type="Button" parent="AudioOptions/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -129,7 +131,7 @@ position = Vector2(144, 183)
 energy = 0.2
 blend_mode = 1
 
-[connection signal="mouse_exited" from="AudioOptions/MarginContainer/VBoxContainer/MusicSlider" to="AudioOptions" method="_on_music_slider_mouse_exited"]
+[connection signal="mouse_exited" from="AudioOptions/MarginContainer/VBoxContainer/MusicSlider" to="AudioOptions/MarginContainer/VBoxContainer/MusicSlider" method="_on_music_slider_mouse_exited"]
+[connection signal="value_changed" from="AudioOptions/MarginContainer/VBoxContainer/MusicSlider" to="AudioOptions/MarginContainer/VBoxContainer/MusicSlider" method="_on_value_changed"]
 [connection signal="mouse_exited" from="AudioOptions/MarginContainer/VBoxContainer/SFXSlider" to="AudioOptions" method="_on_sfx_slider_mouse_exited"]
-[connection signal="pressed" from="AudioOptions/MarginContainer/VBoxContainer/Confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="AudioOptions/MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
