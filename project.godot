@@ -12,12 +12,16 @@ config_version=5
 
 config/name="BubbleEscape"
 run/main_scene="res://World.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[audio]
+
+buses/default_bus_layout="res://audio/default_bus_layout.tres"
 
 [autoload]
 
-Types="*res://Types.gd"
-AudioManager="*res://AudioManager.tscn"
+Types="*res://utils/types.gd"
+AudioManager="*res://audio/AudioManager.tscn"
 
 [display]
 
