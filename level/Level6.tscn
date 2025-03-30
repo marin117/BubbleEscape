@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dmmo0blyqakid"]
+[gd_scene load_steps=36 format=4 uid="uid://dmmo0blyqakid"]
 
 [ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/level.gd" id="1_esfqx"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_7lotl"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cs2xkgk2ypyae" path="res://assets/tiles/wall-crack1.png" id="15_anw08"]
 [ext_resource type="Texture2D" uid="uid://diqso3c1g4tc2" path="res://assets/tiles/wall-crack2.png" id="16_5o7he"]
 [ext_resource type="Texture2D" uid="uid://jtfvmh8fci8q" path="res://assets/envirnoment/sconce.png" id="17_mhtej"]
+[ext_resource type="PackedScene" uid="uid://c148fbu05inp" path="res://bubble/common/Container.tscn" id="18_2hljq"]
 [ext_resource type="Texture2D" uid="uid://doac83wsid4js" path="res://assets/envirnoment/wood_horizontal_pillar.png" id="18_dvust"]
 [ext_resource type="PackedScene" uid="uid://bumdgibs4pj3k" path="res://enviroment/Torch.tscn" id="18_xcnph"]
 [ext_resource type="PackedScene" uid="uid://bt6k4w8em0cg5" path="res://enviroment/Fire.tscn" id="19_x4g2b"]
@@ -161,7 +162,8 @@ position = Vector2(401, 190)
 [node name="Torch2" parent="." instance=ExtResource("18_xcnph")]
 position = Vector2(303, 345)
 
-[node name="Bubbles" type="Node2D" parent="."]
+[node name="Bubbles" parent="." instance=ExtResource("18_2hljq")]
+bubbles = ExtResource("2_7lotl")
 
 [node name="Player" parent="." instance=ExtResource("6_tpl80")]
 position = Vector2(49, 416)

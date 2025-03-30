@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=4 uid="uid://dfsj215kjlssd"]
+[gd_scene load_steps=36 format=4 uid="uid://dfsj215kjlssd"]
 
 [ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/level.gd" id="1_5pqmk"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_u6ppg"]
 [ext_resource type="PackedScene" uid="uid://yjbwuqjtaysl" path="res://enviroment/Image.tscn" id="3_n0fhy"]
 [ext_resource type="PackedScene" uid="uid://bplmdr4p6ufdx" path="res://enviroment/Door.tscn" id="4_5sq1n"]
+[ext_resource type="PackedScene" uid="uid://c148fbu05inp" path="res://bubble/common/Container.tscn" id="5_2siog"]
 [ext_resource type="PackedScene" uid="uid://dwycr7lehl7fi" path="res://player/Player.tscn" id="5_ei17r"]
 [ext_resource type="Texture2D" uid="uid://cvrgrvo3ksjlt" path="res://assets/tiles/floor.png" id="6_rhpty"]
 [ext_resource type="Texture2D" uid="uid://dflwiyo680syw" path="res://assets/tiles/ground.png" id="7_wdmth"]
@@ -134,7 +135,8 @@ image_texture = "res://assets/hints/sphere_hint.png"
 position = Vector2(628, 241)
 scale = Vector2(4, 4)
 
-[node name="Bubbles" type="Node2D" parent="."]
+[node name="Bubbles" parent="." instance=ExtResource("5_2siog")]
+bubbles = ExtResource("2_u6ppg")
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://c2cslev4un0c7"]
+[gd_scene load_steps=39 format=4 uid="uid://c2cslev4un0c7"]
 
 [ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/level.gd" id="1_wlgsp"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_jwjfd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://x57mm8yi2kmf" path="res://enviroment/Bat.tscn" id="3_rj735"]
 [ext_resource type="PackedScene" uid="uid://btdr3uhqd8cdu" path="res://enviroment/Window.tscn" id="4_he0cq"]
 [ext_resource type="PackedScene" uid="uid://bplmdr4p6ufdx" path="res://enviroment/Door.tscn" id="5_talpq"]
+[ext_resource type="PackedScene" uid="uid://c148fbu05inp" path="res://bubble/common/Container.tscn" id="6_ff2tt"]
 [ext_resource type="PackedScene" uid="uid://dwycr7lehl7fi" path="res://player/Player.tscn" id="6_ihlap"]
 [ext_resource type="Texture2D" uid="uid://cvrgrvo3ksjlt" path="res://assets/tiles/floor.png" id="7_oegq0"]
 [ext_resource type="Texture2D" uid="uid://dflwiyo680syw" path="res://assets/tiles/ground.png" id="8_aijkk"]
@@ -142,7 +143,8 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(613, 212)
 scale = Vector2(4, 4)
 
-[node name="Bubbles" type="Node2D" parent="."]
+[node name="Bubbles" parent="." instance=ExtResource("6_ff2tt")]
+bubbles = ExtResource("2_jwjfd")
 
 [node name="Player" parent="." instance=ExtResource("6_ihlap")]
 position = Vector2(49, 416)

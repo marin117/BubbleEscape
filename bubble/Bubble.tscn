@@ -100,7 +100,7 @@ one_way_collision = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_806ex")
+&"": SubResource("AnimationLibrary_806ex")
 }
 
 [node name="BubbleArea" type="Area2D" parent="." groups=["bubbles"]]
@@ -112,4 +112,5 @@ position = Vector2(3.9339e-06, 5.72204e-06)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_fm5ny")
 
+[connection signal="tree_exiting" from="." to="." method="_on_bubble_burst"]
 [connection signal="body_entered" from="BubbleArea" to="." method="_on_bubble_area_body_entered"]

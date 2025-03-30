@@ -120,7 +120,7 @@ shape = SubResource("CapsuleShape2D_tcfxr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_aw0jq")
+&"": SubResource("AnimationLibrary_aw0jq")
 }
 
 [node name="Weapon" type="Sprite2D" parent="."]
@@ -134,8 +134,8 @@ material = SubResource("CanvasItemMaterial_bfadv")
 position = Vector2(13.9628, -1.15829)
 amount = 10
 amount_ratio = 0.7
-process_material = SubResource("ParticleProcessMaterial_ivbfk")
 texture = ExtResource("13_w7cda")
+process_material = SubResource("ParticleProcessMaterial_ivbfk")
 
 [node name="WeaponMarker" type="Marker2D" parent="Weapon"]
 position = Vector2(14.1991, -1.09069)

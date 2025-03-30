@@ -30,20 +30,8 @@ func _physics_process(delta: float) -> void:
 		state = Types.PlayerStates.IDLE
 	else:
 		state = Types.PlayerStates.JUMPING
-
-	var mouse_pos: Vector2 = get_global_mouse_position()
-
 	_handle_input()
-
-	var angle_to_mouse: float = rad_to_deg((mouse_pos - $Weapon.global_position).normalized().angle())
-	if angle_to_mouse < 0:
-		angle_to_mouse += 360
-	if ((angle_to_mouse < 20 or angle_to_mouse > 160) and
-		(angle_to_mouse < 240 or angle_to_mouse > 300)):
-		$Body.flip_h = position > mouse_pos
-		$Hands.flip_v = position > mouse_pos
-		$Weapon.look_at(mouse_pos)
-		$Hands.look_at(mouse_pos)
+	_handle_mouse_rotation(get_global_mouse_position())
 	weapon_marker_position = $Weapon/WeaponMarker.global_position
 	_change_animation()
 	move_and_slide()
@@ -69,6 +57,17 @@ func _handle_input() -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if sliding:
 		velocity *= 1.2
+
+func _handle_mouse_rotation(mouse_pos : Vector2) -> void:
+	var angle_to_mouse: float = rad_to_deg((mouse_pos - $Weapon.global_position).normalized().angle())
+	if angle_to_mouse < 0:
+		angle_to_mouse += 360
+	if ((angle_to_mouse < 20 or angle_to_mouse > 160) and
+		(angle_to_mouse < 240 or angle_to_mouse > 300)):
+		$Body.flip_h = position > mouse_pos
+		$Hands.flip_v = position > mouse_pos
+		$Weapon.look_at(mouse_pos)
+		$Hands.look_at(mouse_pos)
 
 func _change_animation() -> void:
 	if state == Types.PlayerStates.JUMPING:

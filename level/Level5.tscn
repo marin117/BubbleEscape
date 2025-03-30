@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://bsvmcg7tve1ce"]
+[gd_scene load_steps=37 format=4 uid="uid://bsvmcg7tve1ce"]
 
 [ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/level.gd" id="1_86fpb"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_tevya"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bt6k4w8em0cg5" path="res://enviroment/Fire.tscn" id="17_o6j0w"]
 [ext_resource type="PackedScene" uid="uid://bumdgibs4pj3k" path="res://enviroment/Torch.tscn" id="18_7fmkw"]
 [ext_resource type="PackedScene" uid="uid://dwycr7lehl7fi" path="res://player/Player.tscn" id="19_m7i73"]
+[ext_resource type="PackedScene" uid="uid://c148fbu05inp" path="res://bubble/common/Container.tscn" id="19_tevya"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhoha"]
 texture = ExtResource("5_f6ucb")
@@ -170,7 +171,8 @@ position = Vector2(497, 342)
 [node name="StartingPosition" type="Node2D" parent="."]
 position = Vector2(48, 421)
 
-[node name="Bubbles" type="Node2D" parent="."]
+[node name="Bubbles" parent="." instance=ExtResource("19_tevya")]
+bubbles = ExtResource("2_tevya")
 
 [node name="Player" parent="." instance=ExtResource("19_m7i73")]
 position = Vector2(49, 416)
