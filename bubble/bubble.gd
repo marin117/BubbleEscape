@@ -9,6 +9,11 @@ var bursting: bool = false
 signal bubble_collided(body: Node2D)
 signal bubble_burst()
 
+func _ready() -> void:
+	var creeper_debuff: BaseDebuff = LevelState.get_debuff_or_null("Creeper")
+	if creeper_debuff:
+		creeper_debuff.apply(self)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if scale.x > bubble_burst_limit:

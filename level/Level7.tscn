@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=4 uid="uid://ddytjtpnh1icl"]
 
-[ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/level.gd" id="1_x7svc"]
+[ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/scripts/level.gd" id="1_x7svc"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_85ut5"]
 [ext_resource type="PackedScene" uid="uid://bplmdr4p6ufdx" path="res://enviroment/Door.tscn" id="3_2j2wk"]
 [ext_resource type="PackedScene" uid="uid://dwycr7lehl7fi" path="res://player/Player.tscn" id="4_efdhn"]
@@ -203,4 +203,4 @@ position = Vector2(48, 421)
 [connection signal="door_opened" from="Door" to="." method="_on_door_opened"]
 [connection signal="action_pressed" from="Player" to="." method="_on_player_action_pressed"]
 [connection signal="action_released" from="Player" to="." method="_on_player_action_released"]
-[connection signal="player_dropped" from="Player" to="." method="_on_player_player_dropped"]
+[connection signal="player_dropped" from="Player" to="." method="_on_player_dropped"]

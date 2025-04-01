@@ -22,6 +22,7 @@ buses/default_bus_layout="res://audio/default_bus_layout.tres"
 
 Types="*res://utils/types.gd"
 AudioManager="*res://audio/AudioManager.tscn"
+LevelState="*res://level/scripts/level_state.gd"
 
 [display]
 

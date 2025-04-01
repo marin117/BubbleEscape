@@ -1,6 +1,6 @@
 [gd_scene load_steps=39 format=4 uid="uid://ctdlr013qbn4r"]
 
-[ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/level.gd" id="1_ut20y"]
+[ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/scripts/level.gd" id="1_ut20y"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_55fxu"]
 [ext_resource type="PackedScene" uid="uid://bplmdr4p6ufdx" path="res://enviroment/Door.tscn" id="3_ud5wy"]
 [ext_resource type="PackedScene" uid="uid://dwycr7lehl7fi" path="res://player/Player.tscn" id="4_ysqao"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://bt6k4w8em0cg5" path="res://enviroment/Fire.tscn" id="17_ucibd"]
 [ext_resource type="PackedScene" uid="uid://bumdgibs4pj3k" path="res://enviroment/Torch.tscn" id="18_c0di5"]
 [ext_resource type="PackedScene" uid="uid://c148fbu05inp" path="res://bubble/common/Container.tscn" id="19_kcpkk"]
-[ext_resource type="PackedScene" uid="uid://btdr3uhqd8cdu" path="res://enviroment/Window.tscn" id="19_uwg8d"]
+[ext_resource type="PackedScene" uid="uid://btdr3uhqd8cdu" path="res://enviroment/Creeper.tscn" id="19_uwg8d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhoha"]
 texture = ExtResource("5_xrhtu")
@@ -206,4 +206,4 @@ position = Vector2(48, 421)
 [connection signal="door_opened" from="Door" to="." method="_on_door_opened"]
 [connection signal="action_pressed" from="Player" to="." method="_on_player_action_pressed"]
 [connection signal="action_released" from="Player" to="." method="_on_player_action_released"]
-[connection signal="player_dropped" from="Player" to="." method="_on_player_player_dropped"]
+[connection signal="player_dropped" from="Player" to="." method="_on_player_dropped"]

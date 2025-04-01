@@ -1,10 +1,10 @@
 [gd_scene load_steps=39 format=4 uid="uid://c2cslev4un0c7"]
 
-[ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/level.gd" id="1_wlgsp"]
+[ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/scripts/level.gd" id="1_wlgsp"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_jwjfd"]
 [ext_resource type="PackedScene" uid="uid://yjbwuqjtaysl" path="res://enviroment/Image.tscn" id="3_1cwty"]
 [ext_resource type="PackedScene" uid="uid://x57mm8yi2kmf" path="res://enviroment/Bat.tscn" id="3_rj735"]
-[ext_resource type="PackedScene" uid="uid://btdr3uhqd8cdu" path="res://enviroment/Window.tscn" id="4_he0cq"]
+[ext_resource type="PackedScene" uid="uid://btdr3uhqd8cdu" path="res://enviroment/Creeper.tscn" id="4_he0cq"]
 [ext_resource type="PackedScene" uid="uid://bplmdr4p6ufdx" path="res://enviroment/Door.tscn" id="5_talpq"]
 [ext_resource type="PackedScene" uid="uid://c148fbu05inp" path="res://bubble/common/Container.tscn" id="6_ff2tt"]
 [ext_resource type="PackedScene" uid="uid://dwycr7lehl7fi" path="res://player/Player.tscn" id="6_ihlap"]

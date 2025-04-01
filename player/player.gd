@@ -84,6 +84,5 @@ func set_sliding(value: bool) -> void:
 func disable_input() -> void:
 	input_disabled = false
 
-
 func _on_screen_notifier_screen_exited() -> void:
 	player_dropped.emit()

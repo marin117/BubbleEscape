@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bba2krd72h7f"]
+
+[ext_resource type="Script" uid="uid://bc0r17mimtl44" path="res://debuffs/creeper_debuff.gd" id="1_0vnlr"]
+
+[resource]
+script = ExtResource("1_0vnlr")
+debuff_burst_limit = 0.3
+name = "Creeper"
