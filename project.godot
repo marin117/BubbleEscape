@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BubbleEscape"
-run/main_scene="res://World.tscn"
+run/main_scene="uid://5s3tcdn8xx1q"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [audio]

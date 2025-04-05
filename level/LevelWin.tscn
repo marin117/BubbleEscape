@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=4 uid="uid://k6a33chxbp1n"]
+[gd_scene load_steps=17 format=4 uid="uid://k6a33chxbp1n"]
 
 [ext_resource type="Script" uid="uid://cckkeedm1780f" path="res://level/scripts/base_level.gd" id="1_ms7v1"]
 [ext_resource type="Texture2D" uid="uid://3w30s4bba3qh" path="res://assets/hints/win_pic.png" id="3_rjabu"]
+[ext_resource type="Script" uid="uid://dfo1ocvj7r42t" path="res://level/scripts/main_menu_button.gd" id="4_ytsur"]
 [ext_resource type="FontVariation" uid="uid://cgxn50dglscpl" path="res://assets/fonts/MonogramFont.tres" id="5_emnw0"]
 [ext_resource type="Texture2D" uid="uid://dflwiyo680syw" path="res://assets/tiles/ground.png" id="5_jbrux"]
 [ext_resource type="Texture2D" uid="uid://bo46rhtbpx722" path="res://assets/tiles/wall_tile.png" id="6_80umi"]
@@ -68,6 +69,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_emnw0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_d5edw")
 text = "Main menu"
+script = ExtResource("4_ytsur")
 
 [node name="Background" type="TileMapLayer" parent="."]
 z_index = -50
@@ -89,4 +91,4 @@ position = Vector2(80, 440)
 rotation = -0.530023
 scale = Vector2(1.12356, 1.68343)
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="MarginContainer/VBoxContainer/MainMenu" method="_on_main_menu_pressed"]
