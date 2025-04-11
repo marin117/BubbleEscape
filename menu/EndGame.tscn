@@ -1,15 +1,24 @@
-[gd_scene load_steps=17 format=4 uid="uid://k6a33chxbp1n"]
+[gd_scene load_steps=19 format=4 uid="uid://k6a33chxbp1n"]
 
-[ext_resource type="Script" uid="uid://cckkeedm1780f" path="res://level/scripts/base_level.gd" id="1_ms7v1"]
-[ext_resource type="Texture2D" uid="uid://3w30s4bba3qh" path="res://assets/hints/win_pic.png" id="3_rjabu"]
-[ext_resource type="Script" uid="uid://dfo1ocvj7r42t" path="res://level/scripts/main_menu_button.gd" id="4_ytsur"]
-[ext_resource type="FontVariation" uid="uid://cgxn50dglscpl" path="res://assets/fonts/MonogramFont.tres" id="5_emnw0"]
-[ext_resource type="Texture2D" uid="uid://dflwiyo680syw" path="res://assets/tiles/ground.png" id="5_jbrux"]
-[ext_resource type="Texture2D" uid="uid://bo46rhtbpx722" path="res://assets/tiles/wall_tile.png" id="6_80umi"]
-[ext_resource type="Texture2D" uid="uid://cs2xkgk2ypyae" path="res://assets/tiles/wall-crack1.png" id="7_1wnva"]
-[ext_resource type="Texture2D" uid="uid://diqso3c1g4tc2" path="res://assets/tiles/wall-crack2.png" id="8_r2sup"]
-[ext_resource type="Texture2D" uid="uid://dt2g3ldr5j32b" path="res://assets/envirnoment/window/creep_blink1.png" id="9_k5jwd"]
-[ext_resource type="PackedScene" uid="uid://bumdgibs4pj3k" path="res://enviroment/Torch.tscn" id="10_h1aif"]
+[ext_resource type="Script" uid="uid://m36rgaq8xfr5" path="res://menu/end_game.gd" id="1_g325m"]
+[ext_resource type="Texture2D" uid="uid://3w30s4bba3qh" path="res://assets/hints/win_pic.png" id="1_merol"]
+[ext_resource type="FontFile" uid="uid://cg60641xq8c45" path="res://assets/fonts/monogram-extended.ttf" id="2_g325m"]
+[ext_resource type="FontVariation" uid="uid://cgxn50dglscpl" path="res://assets/fonts/MonogramFont.tres" id="3_i8vx5"]
+[ext_resource type="Script" uid="uid://dfo1ocvj7r42t" path="res://menu/scripts/main_menu_button.gd" id="4_buynn"]
+[ext_resource type="Texture2D" uid="uid://dflwiyo680syw" path="res://assets/tiles/ground.png" id="5_nv1iw"]
+[ext_resource type="Texture2D" uid="uid://bo46rhtbpx722" path="res://assets/tiles/wall_tile.png" id="6_wtbg6"]
+[ext_resource type="Texture2D" uid="uid://cs2xkgk2ypyae" path="res://assets/tiles/wall-crack1.png" id="7_n3v47"]
+[ext_resource type="Texture2D" uid="uid://diqso3c1g4tc2" path="res://assets/tiles/wall-crack2.png" id="8_idesx"]
+[ext_resource type="Texture2D" uid="uid://dt2g3ldr5j32b" path="res://assets/envirnoment/window/creep_blink1.png" id="9_smbyt"]
+[ext_resource type="PackedScene" uid="uid://bumdgibs4pj3k" path="res://enviroment/Torch.tscn" id="10_0i74o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ol55"]
+font = ExtResource("2_g325m")
+font_size = 24
+font_color = Color(0.629675, 0.629675, 0.629675, 1)
+outline_size = 4
+outline_color = Color(0.299547, 0.299547, 0.299547, 1)
+shadow_size = 0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5edw"]
 bg_color = Color(0.388468, 0.686162, 0.315191, 1)
@@ -20,22 +29,22 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oil1x"]
-texture = ExtResource("5_jbrux")
+texture = ExtResource("5_nv1iw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6dwx"]
-texture = ExtResource("6_80umi")
+texture = ExtResource("6_wtbg6")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cscqu"]
-texture = ExtResource("7_1wnva")
+texture = ExtResource("7_n3v47")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jv87"]
-texture = ExtResource("8_r2sup")
+texture = ExtResource("8_idesx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
@@ -46,30 +55,37 @@ sources/1 = SubResource("TileSetAtlasSource_m6dwx")
 sources/2 = SubResource("TileSetAtlasSource_cscqu")
 sources/3 = SubResource("TileSetAtlasSource_0jv87")
 
-[node name="LevelWin" type="Node2D"]
-script = ExtResource("1_ms7v1")
+[node name="EndGame" type="Node2D"]
+script = ExtResource("1_g325m")
 
 [node name="WinImage" type="Sprite2D" parent="."]
 position = Vector2(396, 304)
 scale = Vector2(9.603, 10)
-texture = ExtResource("3_rjabu")
+texture = ExtResource("1_merol")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 208.0
-offset_top = 504.0
+offset_top = 471.0
 offset_right = 396.0
-offset_bottom = 636.0
+offset_bottom = 603.0
 scale = Vector2(2.05005, 2.05005)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
+[node name="StopwatchLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Neki tekst"
+label_settings = SubResource("LabelSettings_8ol55")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_emnw0")
+theme_override_fonts/font = ExtResource("3_i8vx5")
 theme_override_styles/hover = SubResource("StyleBoxFlat_d5edw")
 text = "Main menu"
-script = ExtResource("4_ytsur")
+script = ExtResource("4_buynn")
 
 [node name="Background" type="TileMapLayer" parent="."]
 z_index = -50
@@ -79,14 +95,14 @@ tile_set = SubResource("TileSet_w7tgo")
 [node name="CreeperImage" type="Sprite2D" parent="."]
 position = Vector2(398, 72)
 scale = Vector2(2, 2)
-texture = ExtResource("9_k5jwd")
+texture = ExtResource("9_smbyt")
 
-[node name="Torch2" parent="." instance=ExtResource("10_h1aif")]
+[node name="Torch2" parent="." instance=ExtResource("10_0i74o")]
 position = Vector2(708, 438)
 rotation = 0.391546
 scale = Vector2(1.12356, 1.68343)
 
-[node name="Torch3" parent="." instance=ExtResource("10_h1aif")]
+[node name="Torch3" parent="." instance=ExtResource("10_0i74o")]
 position = Vector2(80, 440)
 rotation = -0.530023
 scale = Vector2(1.12356, 1.68343)

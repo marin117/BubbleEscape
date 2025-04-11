@@ -6,11 +6,12 @@
 [sub_resource type="LabelSettings" id="LabelSettings_aaqae"]
 font = ExtResource("1_1x8ju")
 font_size = 24
+font_color = Color(0.629675, 0.629675, 0.629675, 1)
 outline_size = 4
-outline_color = Color(0, 0, 0, 1)
+outline_color = Color(0.299547, 0.299547, 0.299547, 1)
 shadow_size = 0
 
-[node name="Hud" type="Control"]
+[node name="HUD" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,12 +27,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 560)
 layout_mode = 2
 
 [node name="StopwatchLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Neki tekst"
 label_settings = SubResource("LabelSettings_aaqae")
-horizontal_alignment = 1
-vertical_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 2

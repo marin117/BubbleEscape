@@ -5,8 +5,6 @@ const Types = preload( "res://utils/types.gd")
 const Player = preload("res://player/player.gd")
 
 @export var bubble_scene: PackedScene
-@export var level_debuffs : Array[BaseDebuff]
-# Called when the node enters the scene tree for the first time.
 var _player_action_hold: bool = false
 
 @onready var player : Player = $Player
@@ -19,8 +17,8 @@ func _ready() -> void:
 	if get_node_or_null("StartingPosition"):
 		player_starting_position = $StartingPosition
 
-func _process(_delta: float) -> void:
-	super(_delta)
+func _process(delta: float) -> void:
+	super(delta)
 
 func _on_player_action_pressed() -> void:
 	if not _player_action_hold:

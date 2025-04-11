@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://thfvsktko374"]
+
+[ext_resource type="Script" uid="uid://bqejbtx1ngly7" path="res://level/scripts/root_level_screen.gd" id="1_xjdag"]
+[ext_resource type="PackedScene" uid="uid://e6vnw6pvc6i4" path="res://system/Stopwatch.tscn" id="2_g5n1s"]
+[ext_resource type="PackedScene" uid="uid://b1v6b4u8p85oh" path="res://ui/HUD.tscn" id="3_84jry"]
+[ext_resource type="PackedScene" uid="uid://b4smg6f1qpu7b" path="res://level/Level1.tscn" id="4_qpllr"]
+
+[node name="RootLevelScreen" type="Node"]
+script = ExtResource("1_xjdag")
+
+[node name="Stopwatch" parent="." instance=ExtResource("2_g5n1s")]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="UILayer" node_paths=PackedStringArray("stopwatch_node") instance=ExtResource("3_84jry")]
+stopwatch_node = NodePath("../../Stopwatch")
+
+[node name="Level1" parent="." instance=ExtResource("4_qpllr")]
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

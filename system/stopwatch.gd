@@ -11,11 +11,7 @@ func _process(delta: float) -> void:
 		time_elapsed += delta
 
 func formatted_time() -> String:
-	var total_seconds := int(time_elapsed)
-	@warning_ignore("integer_division")
-	var hours: int = floor(total_seconds / 3600)
-	@warning_ignore("integer_division")
-	var minutes := (total_seconds % 3600) / 60
-	var secs := total_seconds % 60
-	var millis := int((time_elapsed - total_seconds) * 1000)
-	return "%02d::%02d::%02d::%03d" % [hours, minutes, secs, millis]
+	return TimeUtils.format_time(time_elapsed)
+
+func stop() -> void:
+	running = false
