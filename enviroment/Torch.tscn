@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bumdgibs4pj3k"]
+[gd_scene load_steps=11 format=3 uid="uid://bumdgibs4pj3k"]
 
 [ext_resource type="Texture2D" uid="uid://drrnxicdn3a8" path="res://assets/envirnoment/torch.png" id="1_2mpea"]
 
@@ -32,7 +32,45 @@ width = 128
 height = 128
 fill = 1
 fill_from = Vector2(0.478632, 0.534188)
-fill_to = Vector2(0.82906, 0.179487)
+fill_to = Vector2(0.752137, 0.239316)
+
+[sub_resource type="Animation" id="Animation_s3dax"]
+resource_name = "pulse"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TorchLight:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.25, 2.5),
+"transitions": PackedFloat32Array(0.707107, 0.739968, 0.488197),
+"update": 0,
+"values": [Vector2(0.752137, 0.239316), Vector2(0.7, 0.239), Vector2(0.752137, 0.239316)]
+}
+
+[sub_resource type="Animation" id="Animation_skg5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TorchLight:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.752137, 0.239316)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1rlon"]
+_data = {
+&"RESET": SubResource("Animation_skg5f"),
+&"pulse": SubResource("Animation_s3dax")
+}
 
 [node name="Torch" type="Area2D"]
 
@@ -53,3 +91,9 @@ scale = Vector2(0.82577, -0.909891)
 color = Color(1, 0.470588, 0.258824, 1)
 energy = 4.0
 texture = SubResource("GradientTexture2D_ohgf5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_1rlon")
+}
+autoplay = "pulse"
