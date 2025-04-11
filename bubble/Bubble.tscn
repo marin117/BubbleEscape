@@ -1,7 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://by6shmnqpsrfb"]
+[gd_scene load_steps=11 format=3 uid="uid://by6shmnqpsrfb"]
 
 [ext_resource type="Script" uid="uid://cicmxtv2qf5yl" path="res://bubble/bubble.gd" id="1_4eu71"]
+[ext_resource type="Shader" uid="uid://bsp4l5avn6vwn" path="res://bubble/bubble.gdshader" id="1_l588v"]
 [ext_resource type="Texture2D" uid="uid://dn7hp4q073c0d" path="res://assets/bubble/bubble.png" id="2_rtqut"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsj2t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4r530"]
+shader = ExtResource("1_l588v")
+shader_parameter/time_speed = 1.0
+shader_parameter/wobble_amplitude = 1.0
+shader_parameter/wobble_frequency = 2.0
+shader_parameter/transparency = 0.85
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhdft"]
 size = Vector2(100, 90.0001)
@@ -83,12 +93,14 @@ _data = {
 size = Vector2(90.0001, 80.0001)
 
 [node name="Bubble" type="CharacterBody2D" groups=["bubbles"]]
+material = SubResource("ShaderMaterial_xsj2t")
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
 collision_mask = 2147483648
 script = ExtResource("1_4eu71")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_4r530")
 scale = Vector2(4.626, 4)
 texture = ExtResource("2_rtqut")
 
