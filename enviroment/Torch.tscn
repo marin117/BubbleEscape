@@ -22,17 +22,32 @@ scale_max = 7.51
 color = Color(0.741859, 0.391635, 0.0655831, 0.721569)
 color_ramp = SubResource("GradientTexture1D_2ddfw")
 
-[sub_resource type="Gradient" id="Gradient_jvcle"]
+[sub_resource type="Gradient" id="Gradient_s3dax"]
 offsets = PackedFloat32Array(0, 0.991285)
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ohgf5"]
-gradient = SubResource("Gradient_jvcle")
+gradient = SubResource("Gradient_s3dax")
 width = 128
 height = 128
 fill = 1
 fill_from = Vector2(0.478632, 0.534188)
 fill_to = Vector2(0.752137, 0.239316)
+
+[sub_resource type="Animation" id="Animation_skg5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TorchLight:texture:fill_to")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.752137, 0.239316)]
+}
 
 [sub_resource type="Animation" id="Animation_s3dax"]
 resource_name = "pulse"
@@ -49,21 +64,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.707107, 0.739968, 0.488197),
 "update": 0,
 "values": [Vector2(0.752137, 0.239316), Vector2(0.7, 0.239), Vector2(0.752137, 0.239316)]
-}
-
-[sub_resource type="Animation" id="Animation_skg5f"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TorchLight:texture:fill_to")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.752137, 0.239316)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1rlon"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://dmmo0blyqakid"]
+[gd_scene load_steps=37 format=4 uid="uid://dmmo0blyqakid"]
 
 [ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/scripts/level.gd" id="1_esfqx"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_7lotl"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://doac83wsid4js" path="res://assets/envirnoment/wood_horizontal_pillar.png" id="18_dvust"]
 [ext_resource type="PackedScene" uid="uid://bumdgibs4pj3k" path="res://enviroment/Torch.tscn" id="18_xcnph"]
 [ext_resource type="PackedScene" uid="uid://bt6k4w8em0cg5" path="res://enviroment/Fire.tscn" id="19_x4g2b"]
+[ext_resource type="PackedScene" uid="uid://x57mm8yi2kmf" path="res://enviroment/Bat.tscn" id="20_nfnad"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhoha"]
 texture = ExtResource("7_yt66x")
@@ -161,6 +162,9 @@ position = Vector2(401, 190)
 
 [node name="Torch2" parent="." instance=ExtResource("18_xcnph")]
 position = Vector2(303, 345)
+
+[node name="Bat" parent="." instance=ExtResource("20_nfnad")]
+position = Vector2(625, 106)
 
 [node name="Bubbles" parent="." instance=ExtResource("18_2hljq")]
 bubbles = ExtResource("2_7lotl")

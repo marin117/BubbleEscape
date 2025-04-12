@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://cfyw47bat6lrg"]
+[gd_scene load_steps=39 format=4 uid="uid://cfyw47bat6lrg"]
 
 [ext_resource type="Script" uid="uid://b6xa7xjibvmwl" path="res://level/scripts/level.gd" id="1_bhhko"]
 [ext_resource type="PackedScene" uid="uid://by6shmnqpsrfb" path="res://bubble/Bubble.tscn" id="2_2a0hv"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://btdr3uhqd8cdu" path="res://enviroment/Creeper.tscn" id="19_087x6"]
 [ext_resource type="PackedScene" uid="uid://c148fbu05inp" path="res://bubble/common/Container.tscn" id="20_g3am5"]
 [ext_resource type="PackedScene" uid="uid://yjbwuqjtaysl" path="res://enviroment/Image.tscn" id="20_ihaue"]
+[ext_resource type="PackedScene" uid="uid://x57mm8yi2kmf" path="res://enviroment/Bat.tscn" id="22_gvqgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhoha"]
 texture = ExtResource("5_qwprg")
@@ -172,6 +173,12 @@ position = Vector2(302, 275)
 
 [node name="Torch2" parent="." instance=ExtResource("18_84fft")]
 position = Vector2(495, 245)
+
+[node name="Bat" parent="." instance=ExtResource("22_gvqgn")]
+position = Vector2(135, 141)
+
+[node name="Bat2" parent="." instance=ExtResource("22_gvqgn")]
+position = Vector2(580, 64)
 
 [node name="Bubbles" parent="." instance=ExtResource("20_g3am5")]
 bubbles = ExtResource("2_2a0hv")
